@@ -2,7 +2,7 @@ import PostalCard from "./PostalCard.jsx";
 
 export default function PostalList({ postalData }) {
   return (
-    <div className="max-h-[68vh] overflow-y-auto space-y-2 border border-gray-300 dark:border-gray-700 rounded-md">
+    <div className="max-h-[65vh] overflow-y-auto space-y-2 border border-gray-300 dark:border-gray-700 rounded-md">
       {postalData.map((office, index) => (
         <PostalCard key={index} office={office} />
       ))}
