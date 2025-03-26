@@ -13,14 +13,14 @@ export default function PostalSearch() {
 
   const handleSearch = async () => {
     if (!input.trim()) {
-      setError("Please enter a valid PIN or City.");
+      setError("Please enter a valid input.");
       return;
     }
     setError(null);
     let data;
     if (searchType === "pincode") {
       if (input.length !== 6) {
-        setError("Please enter a valid 6-digit PIN code.");
+        setError("Please enter a valid 6-digit Postal code.");
         return;
       }
       data = await fetchPostalDataByPincode(input);
@@ -37,17 +37,21 @@ export default function PostalSearch() {
   };
 
   return (
-    <div className="max-w-lg mx-auto space-y-2">
-      <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-2">
-        <h2 className="text-2xl font-bold text-center mb-4">
-          Find Postal Details
-        </h2>
+    <div className="max-w-xl mx-auto flex flex-col items-center space-y-2 p-1">
+      {/* Header Section */}
+      <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 w-full flex flex-col items-center">
+        <img
+          src="/assets/postal-logo.png"
+          alt="Postal Logo"
+          className="w-16 h-16 mb-3"
+        />
+        <h2 className="text-2xl font-bold text-center">Find Postal Details</h2>
 
         {/* Search Type Toggle */}
-        <div className="flex flex-col md:flex-row justify-center gap-2 mb-4">
+        <div className="flex gap-2 mt-4">
           <button
             onClick={() => setSearchType("pincode")}
-            className={`px-4 py-2 rounded-lg text-sm font-semibold ${
+            className={`px-5 py-2 rounded-lg text-sm font-semibold ${
               searchType === "pincode"
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 dark:bg-gray-700"
@@ -57,7 +61,7 @@ export default function PostalSearch() {
           </button>
           <button
             onClick={() => setSearchType("city")}
-            className={`px-4 py-2 rounded-lg text-sm font-semibold ${
+            className={`px-5 py-2 rounded-lg text-sm font-semibold ${
               searchType === "city"
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 dark:bg-gray-700"
@@ -67,20 +71,22 @@ export default function PostalSearch() {
           </button>
         </div>
 
-        {/* Input and Search Button */}
-        <div className="flex gap-2">
+        {/* Input Field & Search Button */}
+        <div className="flex w-full mt-4">
           <input
             type="text"
             placeholder={
-              searchType === "pincode" ? "Enter PIN Code" : "Enter City Name"
+              searchType === "pincode"
+                ? "Enter Postal Code"
+                : "Enter City/Area Name"
             }
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+            className="w-full p-1 border border-gray-300 rounded-l-lg outline-none focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
           />
           <button
             onClick={handleSearch}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+            className="bg-blue-500 text-white px-5 py-3 rounded-r-lg hover:bg-blue-600 transition"
           >
             Search
           </button>
@@ -89,13 +95,17 @@ export default function PostalSearch() {
 
       {/* Error Message */}
       {error && (
-        <div className="bg-red-100 dark:bg-red-700 p-4 rounded-lg">
-          <p className="text-red-500 text-sm">{error}</p>
+        <div className="bg-red-100 dark:bg-red-700 text-red-600 dark:text-white p-3 rounded-lg w-full text-center">
+          <p className="text-sm">{error}</p>
         </div>
       )}
 
-      {/* Display Postal Data in Grid Format */}
-      {postalData && <PostalList postalData={postalData} />}
+      {/* Postal Data Display */}
+      {postalData && (
+        <div className="w-full">
+          <PostalList postalData={postalData} />
+        </div>
+      )}
     </div>
   );
 }
