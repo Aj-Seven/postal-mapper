@@ -4,5 +4,11 @@ export default {
   theme: {
     extend: {},
   },
+  corePlugins: {
+    preflight: false, // Prevents unwanted styling issues
+  },
+  future: {
+    hoverOnlyWhenSupported: true, // Ensures smooth hover effects
+  },
   plugins: [],
 };
