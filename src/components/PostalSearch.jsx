@@ -7,7 +7,7 @@ import PostalList from "./PostalList";
 
 export default function PostalSearch() {
   const [input, setInput] = useState("");
-  const [searchType, setSearchType] = useState("pincode");
+  const [searchType, setSearchType] = useState("city");
   const [postalData, setPostalData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -48,26 +48,26 @@ export default function PostalSearch() {
         <h2 className="text-2xl font-bold text-center">Find Postal Details</h2>
 
         {/* Search Type Toggle */}
-        <div className="flex gap-2 mt-4">
-          <button
-            onClick={() => setSearchType("pincode")}
-            className={`px-5 py-2 rounded-lg text-sm font-semibold ${
-              searchType === "pincode"
-                ? "bg-blue-500 text-white"
-                : "bg-gray-200 dark:bg-gray-700"
-            }`}
-          >
-            Search by PIN Code
-          </button>
+        <div className="flex w-full gap-2 mt-4">
           <button
             onClick={() => setSearchType("city")}
-            className={`px-5 py-2 rounded-lg text-sm font-semibold ${
+            className={`w-full px-5 py-3 rounded-lg text-sm font-semibold ${
               searchType === "city"
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 dark:bg-gray-700"
             }`}
           >
             Search by City
+          </button>
+          <button
+            onClick={() => setSearchType("pincode")}
+            className={`w-full px-5 py-3 rounded-lg text-sm font-semibold ${
+              searchType === "pincode"
+                ? "bg-blue-500 text-white"
+                : "bg-gray-200 dark:bg-gray-700"
+            }`}
+          >
+            Search by Postal Code
           </button>
         </div>
 
