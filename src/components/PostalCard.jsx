@@ -32,13 +32,29 @@ export default function PostalCard({ office }) {
         <strong>Delivery Option:</strong> {office.DeliveryStatus}
       </p>
 
-      {/* Generate Card Button */}
-      <button
-        onClick={() => setIsDialogOpen(true)}
-        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
-      >
-        Generate Address Card
-      </button>
+      <div className="space-x-1">
+        {/* Generate Card Button */}
+        <button
+          onClick={() => setIsDialogOpen(true)}
+          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+        >
+          Address Card
+        </button>
+
+        {/* Search on Google Maps */}
+        <button
+          onClick={() =>
+            window.open(
+              `https://www.google.com/maps/search/?api=1&query=${office.Name}, ${office.District}, ${office.BranchType}, ${office.State}, ${office.Pincode}`,
+              "_blank"
+            )
+          }
+          className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition"
+        >
+          Google Maps
+        </button>
+      </div>
+
       {/* Dialog to Show Address Card */}
       <Dialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)}>
         <AddressCard addressData={addressData} />
