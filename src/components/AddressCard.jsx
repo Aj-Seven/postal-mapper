@@ -34,7 +34,7 @@ export default function AddressCard({ addressData }) {
   };
 
   return (
-    <div className=" rounded-lg p-4 mt-4 text-center space-y-4">
+    <div className=" rounded-lg p-4 text-center bg-gradient-to-b from-black-200 to-black-300 space-y-4">
       {/* Address Card */}
       <div
         ref={cardRef}
@@ -60,13 +60,13 @@ export default function AddressCard({ addressData }) {
       <div className="flex justify-center gap-2">
         <button
           onClick={handleSaveAsPNG}
-          className="w-full bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600"
+          className="w-full bg-yellow-500 text-white px-1 py-2 rounded-lg hover:bg-yellow-600"
         >
           Save as PNG
         </button>
         <button
           onClick={shareOnWhatsApp}
-          className="w-full bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+          className="w-full bg-green-500 text-white px-1 py-2 rounded-lg hover:bg-green-600"
         >
           Share on WhatsApp
         </button>

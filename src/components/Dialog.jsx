@@ -17,7 +17,7 @@ const Dialog = ({ isOpen, onClose, children }) => {
 
       <div className=" relative z-10 w-screen overflow-y-auto">
         <div className="flex min-h-full items-center justify-center p-2 text-center sm:items-center sm:p-0">
-          <div className="relative transform overflow-hidden rounded-lg bg-white dark:bg-gray-800 text-left border border-gray-400 p-1 shadow-md transition-all sm:my-8 sm:w-full sm:max-w-lg">
+          <div className="relative transform overflow-hidden rounded-lg bg-white dark:bg-black text-left border border-gray-400 p-1 shadow-md transition-all sm:my-8 sm:w-full sm:max-w-lg">
             <div className="absolute top-0 right-0 pt-0 pr-0">
               <button
                 type="button"
@@ -27,7 +27,7 @@ const Dialog = ({ isOpen, onClose, children }) => {
                 X
               </button>
             </div>
-            <div className="bg-white dark:bg-gray-800 pb-4 sm:p-2 sm:pb-4">
+            <div className="bg-white dark:bg-black pb-4 sm:p-2 sm:pb-4">
               {children}
             </div>
           </div>
