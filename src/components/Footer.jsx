@@ -1,7 +1,7 @@
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="fixed bottom-0 w-full text-center">
+    <footer className="fixed bottom-0 border-t border-gray-300 dark:border-gray-700 w-full text-center">
       <p className="text-sm">© {currentYear} Aj7</p>
       <p className="text-sm">
         API Credits to{" "}

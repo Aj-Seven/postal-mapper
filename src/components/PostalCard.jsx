@@ -30,7 +30,7 @@ export default function PostalCard({ office }) {
   };
 
   return (
-    <div className="p-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md bg-white dark:bg-black">
+    <div className="p-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
       <h4 className="font-semibold underline text-lg mb-1">{office.Name}</h4>
       <p className="text-sm text-gray-600 dark:text-gray-300">
         <strong>District: </strong> {office.District}, <strong>State: </strong>{" "}

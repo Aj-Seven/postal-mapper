@@ -34,11 +34,11 @@ export default function AddressCard({ addressData }) {
   };
 
   return (
-    <div className=" rounded-lg p-4 text-center bg-gradient-to-b from-black-200 to-black-300 space-y-4">
+    <div className="rounded-lg p-4 text-center space-y-4">
       {/* Address Card */}
       <div
         ref={cardRef}
-        className="p-8 mx-auto rounded-md inline-block text-left"
+        className="p-8 mx-auto rounded-md border border-gray-300 dark:border-gray-500 inline-block text-left"
       >
         <h2 className="text-2xl font-bold mb-2">{addressData.name}</h2>
         <p>{addressData.address}</p>

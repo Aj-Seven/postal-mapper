@@ -39,7 +39,7 @@ export default function PostalSearch() {
   return (
     <div className="max-w-xl mx-auto flex flex-col items-center space-y-1.5 p-0.5">
       {/* Header Section */}
-      <div className="bg-white dark:bg-black border border-gray-300 dark:border-gray-700 shadow-lg rounded-lg p-4 w-full flex flex-col items-center">
+      <div className="border border-gray-300 dark:border-gray-700 shadow-lg rounded-lg p-4 w-full flex flex-col items-center">
         <img
           src="/assets/postal-logo.png"
           alt="Postal Logo"
