@@ -39,7 +39,7 @@ export default function PostalSearch() {
   return (
     <div className="max-w-xl mx-auto flex flex-col items-center space-y-2 p-1">
       {/* Header Section */}
-      <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 w-full flex flex-col items-center">
+      <div className="bg-white dark:bg-black border border-gray-300 dark:border-gray-700 shadow-lg rounded-lg p-4 w-full flex flex-col items-center">
         <img
           src="/assets/postal-logo.png"
           alt="Postal Logo"
@@ -51,7 +51,7 @@ export default function PostalSearch() {
         <div className="flex w-full gap-2 mt-4">
           <button
             onClick={() => setSearchType("city")}
-            className={`w-full px-5 py-3 rounded-lg text-sm font-semibold ${
+            className={`w-full px-2 py-3 rounded-lg text-sm font-semibold ${
               searchType === "city"
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 dark:bg-gray-700"
@@ -61,7 +61,7 @@ export default function PostalSearch() {
           </button>
           <button
             onClick={() => setSearchType("pincode")}
-            className={`w-full px-5 py-3 rounded-lg text-sm font-semibold ${
+            className={`w-full px-2 py-3 rounded-lg text-sm font-semibold ${
               searchType === "pincode"
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 dark:bg-gray-700"
@@ -82,7 +82,7 @@ export default function PostalSearch() {
             }
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="w-full p-1 border border-gray-300 rounded-l-lg outline-none focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+            className="w-full p-1 border border-gray-300 dark:border-gray-700 rounded-l-lg outline-none focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
           />
           <button
             onClick={handleSearch}
